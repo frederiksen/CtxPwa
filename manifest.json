@@ -2,7 +2,8 @@
   "name": "Softphone PoC",
   "short_name": "Softphone PoC",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "/CtxPwa/index.html",
+  "scope": "/CtxPwa/",
   "theme_color": "#313131",
   "background_color": "#313131",
   "icons": [
