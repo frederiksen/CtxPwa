@@ -12,6 +12,17 @@
 <body id="sipClient">
 <div class="container-fluid">
 
+    <form style="margin: 3px; margin-top: 15px;" id="form">
+        <div class="form-group">
+            <div class="input-group-btn">
+                <input type="text" class="form-control" placeholder="SIP number" aria-label="Username" id="username">
+                <input type="password" class="form-control" placeholder="Password" aria-label="Password" id="password">
+                <input type="text" class="form-control" placeholder="Pbx" aria-label="Pbx" value="69102200.pbx.one-connect.dk", id="pbx">
+                <button class="btn btn-sm btn-primary" type="submit" title="Login" id="login">Login</button>
+            </div>
+        </div>
+    </form>
+
     <div class="clearfix sipStatus">
         <div id="txtCallStatus" class="pull-right">&nbsp;</div>
         <div id="txtRegStatus"></div>

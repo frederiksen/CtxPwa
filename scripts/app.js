@@ -2,20 +2,15 @@
 
 var ctxSip;
 
-$(document).ready(function() {
-
-
-    if (typeof(user) === 'undefined') {
-        user = JSON.parse(localStorage.getItem('SIPCreds'));
-    }
+const ctxSipInit = (user, password, pbx) => {
 
     ctxSip = {
 
         config : {
-            password        : user.Pass,
-            displayName     : user.Display,
-            uri             : 'sip:'+user.User+'@'+user.Realm,
-            wsServers       : user.WSServer,
+            password        : password,
+            displayName     : user,
+            uri             : 'sip:'+user+'@'+"69102200.pbx.one-connect.dk",
+            wsServers       : "wss://websocketprod.one-connect.dk/",
             registerExpires : 30,
             traceSip        : true,
             log             : {
@@ -582,6 +577,11 @@ $(document).ready(function() {
         $("#mldError").modal('hide');
         ctxSip.setStatus("Ready");
 
+        $('#username').attr('disabled', true);
+        $('#password').attr('disabled', true);
+        $('#pbx').attr('disabled', true);
+        $('#login').attr('disabled', true);
+
         // Get the userMedia and cache the stream
         if (SIP.WebRTC.isSupported()) {
             SIP.WebRTC.getUserMedia({ audio : true, video : false }, ctxSip.getUserMediaSuccess, ctxSip.getUserMediaFailure);
@@ -799,4 +799,12 @@ $(document).ready(function() {
         this.stop  = stop; //function() { stop; }
     };
 
+};
+
+$(document).ready(function() {
+
+    $('#login').click(function(e) {
+        e.preventDefault();
+        ctxSipInit($("#username").val(), $("#password").val(), $("#pbx").val());
+    });
 });
