@@ -4,8 +4,8 @@
   "display": "standalone",
   "start_url": "/CtxPwa/index.html",
   "scope": "/CtxPwa/",
-  "theme_color": "#313131",
-  "background_color": "#313131",
+  "theme_color": "#40ad47",
+  "background_color": "#40ad47",
   "icons": [
     {
       "src": "e.png",
